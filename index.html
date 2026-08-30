@@ -440,6 +440,148 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
 }
 </style>
 
+
+<style id="proposal-master-typography-v1">
+/* =========================================================
+   PROPOSAL MASTER TYPOGRAPHY V1
+   Font: Inter first, then system-safe fallbacks.
+   Hierarchy: H1 > H2 > H3 > H4.
+   ========================================================= */
+:root{
+  --master-font: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --fs-h1: clamp(52px, 5.4vw, 72px);
+  --fs-h2: clamp(46px, 4.2vw, 52px);
+  --fs-h3: clamp(30px, 3vw, 36px);
+  --fs-h4: clamp(22px, 2vw, 26px);
+  --fs-lead: 20px;
+  --fs-body: 16px;
+  --fs-caption: 12px;
+}
+html,body,button,input,textarea,select,
+h1,h2,h3,h4,h5,h6,p,li,td,th,
+.eyebrow,.num,.dm-no,.cap,.seg-tag,.logic,strong{
+  font-family:var(--master-font)!important;
+}
+body{font-size:var(--fs-body);line-height:1.68;font-weight:400}
+h1,h2,h3,h4,h5,h6{margin-top:0;text-wrap:balance}
+h1{
+  font-size:var(--fs-h1)!important;
+  line-height:1.02!important;
+  letter-spacing:-.035em!important;
+  font-weight:800!important;
+}
+h2{
+  font-size:var(--fs-h2)!important;
+  line-height:1.06!important;
+  letter-spacing:-.03em!important;
+  font-weight:800!important;
+}
+h3{
+  font-size:var(--fs-h3)!important;
+  line-height:1.18!important;
+  letter-spacing:-.02em!important;
+  font-weight:700!important;
+}
+h4{
+  font-size:var(--fs-h4)!important;
+  line-height:1.24!important;
+  letter-spacing:-.018em!important;
+  font-weight:700!important;
+}
+p,li{font-weight:400}
+strong,b{font-weight:700!important}
+.lead{font-size:var(--fs-lead)!important;line-height:1.6}
+.subtitle{font-size:17px!important;line-height:1.65!important}
+.small,.cap,.kpis,.kpi,.pricing-footnote{font-size:13px}
+.eyebrow,.pill,.seg-tag,.kicker,.phase-no,.mlabel{font-weight:800!important;letter-spacing:.09em}
+
+/* Major proposal chapters A–E */
+.head.major-head,.section-head.major-head{
+  display:grid!important;
+  grid-template-columns:92px minmax(0,1fr)!important;
+  gap:28px!important;
+  align-items:start!important;
+  margin-bottom:38px!important;
+}
+.major-head .num{
+  font-size:86px!important;
+  line-height:.82!important;
+  min-width:92px!important;
+  font-weight:700!important;
+  letter-spacing:-.055em!important;
+}
+.major-head .major-section-name{
+  margin:0 0 13px!important;
+  color:var(--ink)!important;
+  white-space:nowrap;
+}
+.major-head .major-section-statement{
+  margin:0 0 16px!important;
+  max-width:1000px;
+  color:var(--ink);
+}
+.major-head .subtitle{max-width:1050px!important;margin-top:0!important}
+
+/* Keep component headings subordinate to chapter H2. */
+#de-xuat-giai-phap .dm-titlebar h3,
+#de-xuat-giai-phap .growth-card h3,
+#de-xuat-giai-phap .growth-head h3,
+#de-xuat-giai-phap .online-copy h4,
+#de-xuat-giai-phap .seg-card.v4 h4,
+#lo-trinh .logic-step h3,
+#lo-trinh .timeline.v8 .phase h3{
+  font-weight:700!important;
+}
+
+@media(max-width:800px){
+  :root{
+    --fs-h1: clamp(42px, 11vw, 48px);
+    --fs-h2: clamp(34px, 9vw, 38px);
+    --fs-h3: clamp(26px, 7vw, 30px);
+    --fs-h4: clamp(20px, 5.5vw, 22px);
+    --fs-lead: 18px;
+    --fs-body: 16px;
+  }
+  .head.major-head,.section-head.major-head{
+    grid-template-columns:62px minmax(0,1fr)!important;
+    gap:16px!important;
+  }
+  .major-head .num{font-size:62px!important;min-width:62px!important}
+  .major-head .major-section-name{white-space:normal}
+}
+</style>
+
+
+<style id="v23-hero-typography-refine">
+/* Master Template: softer, more balanced hero typography */
+.hero-v3-copy{max-width:58%;padding:48px}
+.hero-v3-copy h1{
+  font-family:Manrope,Inter,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif!important;
+  font-size:clamp(52px,4.35vw,60px)!important;
+  font-weight:650!important;
+  line-height:1.06!important;
+  letter-spacing:-.035em!important;
+  max-width:590px!important;
+  margin:18px 0 22px!important;
+  text-transform:none!important;
+}
+.hero-v3-copy .lead{
+  font-size:18px!important;
+  line-height:1.7!important;
+  font-weight:400!important;
+  max-width:610px!important;
+  margin-bottom:22px!important;
+}
+@media(max-width:980px){
+ .hero-v3-copy{max-width:72%;padding:36px}
+ .hero-v3-copy h1{font-size:clamp(48px,6vw,56px)!important}
+}
+@media(max-width:640px){
+ .hero-v3-copy{max-width:100%;padding:24px}
+ .hero-v3-copy h1{font-size:clamp(38px,10vw,44px)!important;line-height:1.07!important;max-width:100%!important}
+ .hero-v3-copy .lead{font-size:17px!important;line-height:1.6!important}
+}
+</style>
 </head><body>
 
 <header class="wrap hero" style="display:block;padding-top:44px">
@@ -448,14 +590,14 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
     <div class="hero-v3-copy">
       <img class="logo" src="data:image/webp;base64,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" alt="Milinaa logo" style="width:120px;height:120px;position:relative;object-fit:contain;border-radius:50%;box-shadow:none;background:rgba(255,255,255,.72)">
       <div class="eyebrow" style="margin-top:16px">MILINAA GROWTH PROPOSAL · 2026</div>
-      <h1>BIẾN KHÁCH HÀNG ĐA KÊNH THÀNH ĐỘNG LỰC TĂNG TRƯỞNG</h1>
-      <p class="lead">Kết nối khách hàng từ mạng xã hội – quảng cáo – cửa hàng → nhận diện → chăm sóc tự động → kích hoạt mua lại.
+      <h1>Biến Khách Hàng Đa Kênh Thành Động Lực Tăng Trưởng</h1>
+      <p class="lead">Kết Nối Khách Hàng Từ Mạng Xã Hội – Quảng Cáo – Cửa Hàng → Nhận Diện → Chăm Sóc Tự Động → Kích Hoạt Mua Lại.
       <div class="hero-goal"><span>MONG MUỐN CỦA MILINAA</span><strong>150–200 TRIỆU ĐỒNG / THÁNG</strong><small>Tăng trưởng doanh thu bằng cách khai thác tốt hơn tệp khách hàng hiện hữu, đồng thời tiếp tục mở rộng khách hàng mới.</small></div></p>
     </div>
   </div>
 </header>
 
-<section id="hien-trang"><div class="wrap"><div class="head"><div class="num">A</div><div><div class="eyebrow">Hiện trạng</div><h2>Những nền tảng Milinaa đã xây dựng tốt</h2><p class="subtitle">Ghi nhận các tài sản thương hiệu đã tích lũy trong hơn 10 năm và mục tiêu kinh doanh đang hướng tới.</p></div></div><div class="grid4"><div class="card"><span class="pill">🏬 Nền tảng</span><h3>10+ năm kinh doanh</h3><p>Thương hiệu giày nữ hoạt động từ khoảng 2014, có cửa hàng vật lý, kinh nghiệm thị trường và liên kết xưởng sản xuất.</p></div><div class="card"><span class="pill">📣 Độ phủ</span><h3>Hệ thống đa kênh mạnh</h3><p>Facebook ~259K, Instagram ~148K, TikTok ~23,6K, Threads ~26,4K, Shopee và cửa hàng offline.</p></div><div class="card"><span class="pill">🧾 Vận hành</span><h3>Offline là điểm bán quan trọng</h3><p>Giao dịch cửa hàng được quản lý qua KiotViet; Milinaa vẫn kết hợp quảng cáo Facebook và nội dung tự nhiên.</p></div><div class="card"><span class="pill">🎯 Mục tiêu</span><h3>150–200 triệu/tháng</h3><p>Với AOV tạm tính 300–350K, mục tiêu tương đương khoảng <strong>570–670 đơn/tháng</strong>, tức <strong>19–22 đơn/ngày</strong>.</p></div></div>
+<section id="hien-trang"><div class="wrap"><div class="head major-head"><div class="num">A</div><div><h2 class="major-section-name">HIỆN TRẠNG</h2><h3 class="major-section-statement">Những nền tảng Milinaa đã xây dựng tốt</h3><p class="subtitle">Ghi nhận các tài sản thương hiệu đã tích lũy trong hơn 10 năm và mục tiêu kinh doanh đang hướng tới.</p></div></div><div class="grid4"><div class="card"><span class="pill">🏬 Nền tảng</span><h3>10+ năm kinh doanh</h3><p>Thương hiệu giày nữ hoạt động từ khoảng 2014, có cửa hàng vật lý, kinh nghiệm thị trường và liên kết xưởng sản xuất.</p></div><div class="card"><span class="pill">📣 Độ phủ</span><h3>Hệ thống đa kênh mạnh</h3><p>Facebook ~259K, Instagram ~148K, TikTok ~23,6K, Threads ~26,4K, Shopee và cửa hàng offline.</p></div><div class="card"><span class="pill">🧾 Vận hành</span><h3>Offline là điểm bán quan trọng</h3><p>Giao dịch cửa hàng được quản lý qua KiotViet; Milinaa vẫn kết hợp quảng cáo Facebook và nội dung tự nhiên.</p></div><div class="card"><span class="pill">🎯 Mục tiêu</span><h3>150–200 triệu/tháng</h3><p>Với AOV tạm tính 300–350K, mục tiêu tương đương khoảng <strong>570–670 đơn/tháng</strong>, tức <strong>19–22 đơn/ngày</strong>.</p></div></div>
 <div class="card channel-gallery-card" style="margin-top:22px">
   <div class="channel-gallery-head">
     <span class="pill">📱 Hệ thống đa kênh hiện có</span>
@@ -487,16 +629,16 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
   </div>
 </div>
 <div class="card" style="margin-top:22px"><h3>Tài sản có giá trị nhất: lượng khách hàng và người theo dõi đã tích lũy</h3><p>Milinaa đã có nhiều “cửa vào”: lượt truy cập, người theo dõi, khách tại cửa hàng, Shopee, quảng cáo và nội dung tự nhiên. Cơ hội tiếp theo là kết nối những tài sản này thành một hành trình thống nhất hơn và khai thác tốt hơn doanh thu từ khách hiện hữu.</p><div class="note"><strong>Câu hỏi chiến lược:</strong> Làm thế nào để Milinaa duy trì khoảng 20 đơn/ngày mà không đặt toàn bộ áp lực tăng trưởng lên việc liên tục tìm khách hàng mới?</div></div></div></section>
-<section id="co-hoi-toi-uu"><div class="wrap"><div class="head"><div class="num">B</div><div><div class="eyebrow">Cơ hội tối ưu</div><h2>Những điểm có thể khai thác tốt hơn từ nền tảng hiện tại</h2><p class="subtitle">Không thay thế những gì Milinaa đang làm tốt; chỉ bổ sung các lớp hội tụ, nhận diện và kích hoạt lại.</p></div></div><div class="grid2"><div class="card opp"><div class="oppicon">🔗</div><div><h3>01 — Hội tụ hành trình đa kênh</h3><p>Các kênh Social, Shopee và Offline có thể cùng hướng khách về một <strong>điểm hội tụ khách hàng</strong> để tiếp tục chăm sóc.</p></div></div><div class="card opp"><div class="oppicon">👤</div><div><h3>02 — Chuyển audience thành Member</h3><p>Hướng tới hành trình <strong>Người theo dõi → Người tương tác → Thành viên → Khách mua hàng → Khách mua lại</strong>.</p></div></div><div class="card opp"><div class="oppicon">✨</div><div><h3>03 — Mở rộng hành trình sau mua</h3><p><strong>Mua → tích điểm → cảm ơn → gợi ý sản phẩm → mua lại → nâng hạng → tái kích hoạt.</strong></p></div></div><div class="card opp"><div class="oppicon">⚖️</div><div><h3>04 — Cân bằng khách mới & hiện hữu</h3><p>20 đơn/ngày đến từ nhiều nguồn: <strong>khách mới + mua lại + bán chéo + tái kích hoạt + giới thiệu</strong>.</p></div></div></div><div class="note" style="margin-top:22px"><strong>3 từ khóa trọng tâm:</strong> HỘI TỤ → NHẬN DIỆN → KÍCH HOẠT LẠI.</div></div></section>
+<section id="co-hoi-toi-uu"><div class="wrap"><div class="head major-head"><div class="num">B</div><div><h2 class="major-section-name">CƠ HỘI TỐI ƯU</h2><h3 class="major-section-statement">Những điểm có thể khai thác tốt hơn từ nền tảng hiện tại</h3><p class="subtitle">Không thay thế những gì Milinaa đang làm tốt; chỉ bổ sung các lớp hội tụ, nhận diện và kích hoạt lại.</p></div></div><div class="grid2"><div class="card opp"><div class="oppicon">🔗</div><div><h3>01 — Hội tụ hành trình đa kênh</h3><p>Các kênh Social, Shopee và Offline có thể cùng hướng khách về một <strong>điểm hội tụ khách hàng</strong> để tiếp tục chăm sóc.</p></div></div><div class="card opp"><div class="oppicon">👤</div><div><h3>02 — Chuyển audience thành Member</h3><p>Hướng tới hành trình <strong>Người theo dõi → Người tương tác → Thành viên → Khách mua hàng → Khách mua lại</strong>.</p></div></div><div class="card opp"><div class="oppicon">✨</div><div><h3>03 — Mở rộng hành trình sau mua</h3><p><strong>Mua → tích điểm → cảm ơn → gợi ý sản phẩm → mua lại → nâng hạng → tái kích hoạt.</strong></p></div></div><div class="card opp"><div class="oppicon">⚖️</div><div><h3>04 — Cân bằng khách mới & hiện hữu</h3><p>20 đơn/ngày đến từ nhiều nguồn: <strong>khách mới + mua lại + bán chéo + tái kích hoạt + giới thiệu</strong>.</p></div></div></div><div class="note" style="margin-top:22px"><strong>3 từ khóa trọng tâm:</strong> HỘI TỤ → NHẬN DIỆN → KÍCH HOẠT LẠI.</div></div></section>
 
 
 <section id="de-xuat-giai-phap">
 <div class="wrap">
-  <div class="head">
+  <div class="head major-head">
     <div class="num">C</div>
     <div>
-      <div class="eyebrow">Đề xuất giải pháp</div>
-      <h2>Xây hệ thống tăng trưởng khách hàng trên nền tảng Milinaa đang có</h2>
+      <h2 class="major-section-name">ĐỀ XUẤT GIẢI PHÁP</h2>
+      <h3 class="major-section-statement">Xây hệ thống tăng trưởng khách hàng trên nền tảng Milinaa đang có</h3>
       <p class="subtitle">CNV là lớp kết nối và khai thác khách hàng phía sau các kênh hiện tại; không thay KiotViet, không bỏ Shopee và không bỏ quảng cáo Facebook.</p>
     </div>
   </div>
@@ -656,11 +798,11 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
 
 <section class="section" id="lo-trinh">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head major-head">
       <div class="num">D</div>
       <div>
-        <div class="eyebrow">Lộ trình triển khai</div>
-        <h2>Triển khai theo 3 giai đoạn — từ tệp khách hàng đến vòng lặp tăng trưởng</h2>
+        <h2 class="major-section-name">LỘ TRÌNH TRIỂN KHAI</h2>
+        <h3 class="major-section-statement">Triển khai theo 3 giai đoạn — từ tệp khách hàng đến vòng lặp tăng trưởng</h3>
         <p class="subtitle"><strong>Giai đoạn 1 xây tệp khách hàng → Giai đoạn 2 khai thác dữ liệu khách hàng → Giai đoạn 3 biến tệp khách hàng thành động lực tăng trưởng.</strong></p>
       </div>
     </div>
@@ -764,11 +906,11 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
 
 <section class="section" id="dau-tu">
   <div class="wrap">
-    <div class="section-head">
+    <div class="section-head major-head">
       <div class="num">E</div>
       <div>
-        <div class="eyebrow">Đầu tư</div>
-        <h2>Tự cấu hình gói giải pháp & xem ngân sách theo nhu cầu</h2>
+        <h2 class="major-section-name">ĐẦU TƯ</h2>
+        <h3 class="major-section-statement">Tự cấu hình gói giải pháp & xem ngân sách theo nhu cầu</h3>
         <p class="subtitle">Milinaa có thể chọn các hạng mục phù hợp với từng giai đoạn triển khai. Tổng ngân sách sẽ tự động cập nhật theo các ô lựa chọn được chọn.</p>
       </div>
     </div>
@@ -948,6 +1090,168 @@ h1,h2,h3,h4,h5,h6{letter-spacing:-.02em}
     } else {
       row.style.cursor = 'default';
     }
+  });
+})();
+</script>
+
+
+
+<!-- Proposal Master: universal image lightbox -->
+<style id="proposal-image-lightbox-css">
+  img[data-proposal-zoom="1"]{
+    cursor: zoom-in;
+  }
+  .proposal-lightbox{
+    position:fixed;
+    inset:0;
+    z-index:999999;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:32px;
+    background:rgba(20,16,13,.88);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+  }
+  .proposal-lightbox.is-open{display:flex}
+  .proposal-lightbox__stage{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .proposal-lightbox__img{
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:min(96vw,1600px);
+    max-height:90vh;
+    object-fit:contain;
+    border-radius:16px;
+    box-shadow:0 28px 90px rgba(0,0,0,.42);
+    cursor:zoom-out;
+    user-select:none;
+    -webkit-user-drag:none;
+  }
+  .proposal-lightbox__close{
+    position:fixed;
+    top:18px;
+    right:20px;
+    z-index:2;
+    width:46px;
+    height:46px;
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:999px;
+    display:grid;
+    place-items:center;
+    background:rgba(255,255,255,.12);
+    color:#fff;
+    font:400 32px/1 Arial,sans-serif;
+    cursor:pointer;
+    transition:background .18s ease, transform .18s ease;
+  }
+  .proposal-lightbox__close:hover{background:rgba(255,255,255,.22);transform:scale(1.04)}
+  .proposal-lightbox__caption{
+    position:fixed;
+    left:50%;
+    bottom:15px;
+    transform:translateX(-50%);
+    max-width:min(900px,86vw);
+    padding:8px 13px;
+    border-radius:999px;
+    background:rgba(0,0,0,.36);
+    color:rgba(255,255,255,.88);
+    font-size:12px;
+    line-height:1.35;
+    text-align:center;
+    pointer-events:none;
+  }
+  body.proposal-lightbox-open{overflow:hidden}
+  @media(max-width:640px){
+    .proposal-lightbox{padding:18px 10px 54px}
+    .proposal-lightbox__img{max-width:96vw;max-height:84vh;border-radius:10px}
+    .proposal-lightbox__close{top:12px;right:12px;width:42px;height:42px}
+    .proposal-lightbox__caption{bottom:10px;max-width:92vw;border-radius:14px}
+  }
+</style>
+<script id="proposal-image-lightbox-js">
+(function(){
+  function ready(fn){
+    if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+    else fn();
+  }
+
+  ready(function(){
+    const images = Array.from(document.querySelectorAll('img'));
+    if(!images.length) return;
+
+    const overlay = document.createElement('div');
+    overlay.className = 'proposal-lightbox';
+    overlay.setAttribute('role','dialog');
+    overlay.setAttribute('aria-modal','true');
+    overlay.setAttribute('aria-label','Xem ảnh phóng to');
+    overlay.innerHTML = `
+      <button class="proposal-lightbox__close" type="button" aria-label="Đóng ảnh phóng to">×</button>
+      <div class="proposal-lightbox__stage">
+        <img class="proposal-lightbox__img" alt="">
+      </div>
+      <div class="proposal-lightbox__caption" hidden></div>`;
+    document.body.appendChild(overlay);
+
+    const big = overlay.querySelector('.proposal-lightbox__img');
+    const closeBtn = overlay.querySelector('.proposal-lightbox__close');
+    const caption = overlay.querySelector('.proposal-lightbox__caption');
+    let lastTrigger = null;
+
+    function openLightbox(img){
+      lastTrigger = img;
+      big.src = img.currentSrc || img.src;
+      big.alt = img.alt || '';
+      const text = (img.alt || '').trim();
+      caption.textContent = text;
+      caption.hidden = !text;
+      overlay.classList.add('is-open');
+      document.body.classList.add('proposal-lightbox-open');
+      closeBtn.focus({preventScroll:true});
+    }
+
+    function closeLightbox(){
+      if(!overlay.classList.contains('is-open')) return;
+      overlay.classList.remove('is-open');
+      document.body.classList.remove('proposal-lightbox-open');
+      big.removeAttribute('src');
+      if(lastTrigger && typeof lastTrigger.focus === 'function') lastTrigger.focus({preventScroll:true});
+    }
+
+    images.forEach(function(img){
+      img.dataset.proposalZoom = '1';
+      if(!img.hasAttribute('tabindex')) img.setAttribute('tabindex','0');
+      if(!img.hasAttribute('role')) img.setAttribute('role','button');
+      const label = (img.alt || '').trim();
+      if(!img.hasAttribute('aria-label')) img.setAttribute('aria-label', label ? 'Phóng to ảnh: ' + label : 'Phóng to ảnh');
+      img.addEventListener('click', function(e){
+        e.preventDefault();
+        openLightbox(img);
+      });
+      img.addEventListener('keydown', function(e){
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          openLightbox(img);
+        }
+      });
+    });
+
+    closeBtn.addEventListener('click', closeLightbox);
+    overlay.addEventListener('click', function(e){
+      if(e.target === overlay || e.target.classList.contains('proposal-lightbox__stage') || e.target === big){
+        closeLightbox();
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeLightbox();
+    });
   });
 })();
 </script>
